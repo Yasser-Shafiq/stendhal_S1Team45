@@ -212,9 +212,12 @@ public class BestiaryEvent extends RPEvent {
 				name += " (abnormal)";
 			}
 
-			sb.append(name + "," + solo.toString() + "," + shared.toString());
-			if (idx != creatureCount - 1) {
-				sb.append(";");
+			// Excludes ??? entries to avoid clogging UI
+			if (!name.startsWith("???")) {
+				sb.append(name + "," + solo.toString() + "," + shared.toString());
+				if (idx != creatureCount - 1) {
+					sb.append(";");
+				}
 			}
 
 			idx++;
