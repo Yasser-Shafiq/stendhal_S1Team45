@@ -11,8 +11,10 @@
  ***************************************************************************/
 package games.stendhal.server.entity.player;
 
-import static org.junit.Assert.assertFalse;
+//import static org.junit.Assert.assertFalse;
 //import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.is;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,6 +28,7 @@ import games.stendhal.server.core.engine.StendhalRPZone;
 import games.stendhal.server.entity.item.ConsumableItem;
 import games.stendhal.server.entity.item.consumption.Poisoner;
 import games.stendhal.server.entity.item.scroll.MarkedScroll;
+import games.stendhal.server.entity.status.StatusType;
 //import games.stendhal.server.entity.player.Player;
 //import games.stendhal.server.entity.status.StatusType;
 import games.stendhal.server.maps.MockStendlRPWorld;
@@ -58,13 +61,19 @@ public class TeleportPoisonedTest {
 		final StendhalRPWorld world = SingletonRepository.getRPWorld();
 		final StendhalRPZone zone = new StendhalRPZone("test");
 		world.addRPZone(zone);
+		final StendhalRPZone semos = new StendhalRPZone("0_semos_city", 100, 100);
+		world.addRPZone(semos);
 		final ConsumableItem c200_1 = new ConsumableItem("cheese", "", "", attributes);
 		zone.add(c200_1);
 		final Poisoner poisoner = new Poisoner();
-		final Player bob = PlayerTestHelper.createPlayer("player");
-		poisoner.feed(c200_1, bob);
-		final MarkedScroll scroll = new MarkedScroll("", "", "", attributes);
-		assertFalse(scroll.onUsed(bob));
+		final Player jonjo = PlayerTestHelper.createPlayer("player");
+		zone.add(jonjo);
+		poisoner.feed(c200_1, jonjo);
+		final MarkedScroll scroll = new MarkedScroll("marked scroll", "", "", attributes);
+		zone.add(scroll);
+		assertThat(jonjo.hasStatus(StatusType.POISONED), is(true));
+		assertThat(scroll.onUsed(jonjo), is(false));
+		
 	}
 
 }
