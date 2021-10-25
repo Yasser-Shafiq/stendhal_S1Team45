@@ -11,8 +11,6 @@
  ***************************************************************************/
 package games.stendhal.server.entity.player;
 
-//import static org.junit.Assert.assertFalse;
-//import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.is;
 
@@ -29,8 +27,6 @@ import games.stendhal.server.entity.item.ConsumableItem;
 import games.stendhal.server.entity.item.consumption.Poisoner;
 import games.stendhal.server.entity.item.scroll.MarkedScroll;
 import games.stendhal.server.entity.status.StatusType;
-//import games.stendhal.server.entity.player.Player;
-//import games.stendhal.server.entity.status.StatusType;
 import games.stendhal.server.maps.MockStendlRPWorld;
 import marauroa.common.Log4J;
 import utilities.PlayerTestHelper;
