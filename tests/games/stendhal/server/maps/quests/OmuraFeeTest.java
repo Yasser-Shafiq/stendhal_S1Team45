@@ -22,7 +22,7 @@ import games.stendhal.server.entity.player.Player;
 import utilities.PlayerTestHelper;
 
 public class OmuraFeeTest {
-
+	
     private Player player = null;
     private SpeakerNPC npc = null;
     private Engine en = null;
