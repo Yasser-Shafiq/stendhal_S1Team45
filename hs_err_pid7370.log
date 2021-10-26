@@ -1,0 +1,33 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f2b302be0ad, pid=7370, tid=7388
+#
+# JRE version: OpenJDK Runtime Environment (11.0.9.1+1) (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.04)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.9.1+1-Ubuntu-0ubuntu1.20.04, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x30ad]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/lib/systemd/systemd-coredump %P %u %g %s %t 9223372036854775808 %h" (or dumping to /home/csimage/git/stendhal_S1Team45/core.7370)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-lts
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:43379 -ea -javaagent:/home/csimage/.eclipse/org.eclipse.platform_4.15.0_1980009725_linux_gtk_x86_64/configuration/org.eclipse.osgi/219/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 45059 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -testNameFile /tmp/testNames7473826570932310225.txt
+
+Host: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz, 2 cores, 3G, Linux Mint 20 Ulyana
+Time: Mon Oct 25 16:05:20 2021 BST elapsed time: 109.922623 seconds (0d 0h 1m 49s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f2b28128000):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=7388, stack(0x00007f2b10413000,0x00007f2b10514000)]
+
+Stack: [0x00007f2b10413000,0x00007f2b10514000],  sp=0x00007f2b105111f0,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x30ad]
+C  [libjimage.so+0x3da2]
+C  [libjimage.so+0x42b1]  JIMAGE_FindResource+0xf1
+V  [libjvm.so+0x5ae8d1]
