@@ -138,7 +138,7 @@ public class Creature extends NPC {
 	private boolean isIdle;
 
 	/** The type of the damage this creature does */
-	private Nature damageType = Nature.CUT;
+	private Nature damageType = Nature.CUT; 
 	/** The type of the damage this creature does in ranged attacks */
 	private Nature rangedDamageType = Nature.CUT;
 
@@ -1075,6 +1075,7 @@ public class Creature extends NPC {
 	 */
 	public void setSusceptibilities(Map<Nature, Double> susceptibilities) {
 		this.susceptibilities = susceptibilities;
+	
 	}
 
 	@Override
