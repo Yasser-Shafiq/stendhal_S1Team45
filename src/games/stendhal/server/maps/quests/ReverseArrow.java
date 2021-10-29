@@ -133,31 +133,59 @@ public class ReverseArrow extends AbstractQuest implements
 			// * * 0 * *
 			// * 1 2 3 *
 			// 4 5 6 7 8
+			
+			// bugs
+			// first_row  0 1 2 3 4        8            0
+			// second_row * 5 6 7 *      5 * 7        1 * 2
+			// third_row  * * 8 * *    0 1 2 3 4    3 4 5 6 7
+			// fourth_row                  6		    8
 
-			// get the position of the topmost token
+			// get the position of the topmost token and last token
+
+			
+			
+			//check first row
 			final int topX = tokens.get(0).getX();
 			final int topY = tokens.get(0).getY();
-
-			// check first row
-			for (int i = 1; i <= 3; i++) {
+			
+			if (tokens.get(0).getX() != topX 
+				|| tokens.get(0).getY() != topY ) {  // check token 0
+				
+				return false;
+			}
+			
+			// check second row
+			for (int i = 1; i < 3; i++) {
 				final Token token = tokens.get(i);
-				if (token.getX() != topX - 1 + i - 1
-						|| token.getY() != topY + 1) {
+				if ((token.getX() != topX - 2 + i 		//topx -2 + i is used to check coordinate of token1
+					&& token.getX() != topX -1 + i ) //topx -1 +i is used to check the coordinate of token2
+					|| token.getY() != topY + 1) {   //check coodinates of y
 					return false;
 				}
 			}
 
-			// check second row
-			for (int i = 4; i <= 8; i++) {
+			// check third row
+			for (int i = 4; i < 8; i++) {
 				final Token token = tokens.get(i);
-				if (token.getX() != topX - 2 + i - 4
-						|| token.getY() != topY + 2) {
+				if (token.getX() != topX - 2 + i - 3 // from token 3 to token 7
+					|| token.getY() != topY + 2) { // check coordinates of y
 					return false;
 				}
+			}
+			
+			//check fourth row
+			final int token_8X = tokens.get(8).getX();
+			final int token_8Y = tokens.get(8).getY();
+			
+			if (tokens.get(8).getX() != token_8X 
+				|| tokens.get(8).getY() != token_8Y ) { // check token 8
+				
+				return false;
 			}
 
 			return true;
 		}
+
 
 		/**
 		 * invoked shortly after the player did his/her third move.
@@ -322,6 +350,9 @@ public class ReverseArrow extends AbstractQuest implements
 	/**
 	 * Adds the tokens to the game field.
 	 */
+	
+	//bugs here
+	
 	private void addAllTokens() {
 		// 0 1 2 3 4
 		// * 5 6 7 *
