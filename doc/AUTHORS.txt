@@ -201,3 +201,17 @@ Notable contributors:
 - SnowFlake
   · Maps maker
   · NPCs
+- Mihnea Dumitru
+  · Coder (fixed Solar and glacier centaur have the wrong elemental susceptibility)
+- Yasser Shafiq
+  · Coder (fixed NPC Lupos doesn't want an elvish hat for quest)
+- Scott Caulfield
+  · Coder (fixed Omura Sumitada's dialogue is confusing)
+- Chenxi Qu
+  · Coder (fixed Zynn Iwuhos dialogue does not grant XP)
+- Daniel Oxley
+  · Coder (fixed Teleport scrolls work when poisoned)
+- Toe Naing Lin
+  · Coder (fixed The bestiary item is just full of fluff...)
+- Hongding Xu
+  · Coder (fixed Gamblos does not like my arrow)
