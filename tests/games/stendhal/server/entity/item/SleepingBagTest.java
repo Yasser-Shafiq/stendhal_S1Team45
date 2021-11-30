@@ -15,7 +15,6 @@ import utilities.RPClass.ItemTestHelper;
 
 public class SleepingBagTest {
 	
-	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		Log4J.init();
