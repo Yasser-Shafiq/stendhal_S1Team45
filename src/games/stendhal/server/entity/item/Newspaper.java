@@ -32,5 +32,7 @@ public class Newspaper extends Item {
 
 	public Newspaper(final Newspaper item) {
 		super(item);
+		new NewspaperEvent();
 	}
+
 }

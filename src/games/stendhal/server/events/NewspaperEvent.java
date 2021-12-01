@@ -27,5 +27,14 @@ import static games.stendhal.common.constants.Events.BESTIARY;
 
 public class NewspaperEvent extends RPEvent {
 
-}
 
+
+
+    public NewspaperEvent (){
+    }
+
+
+    private void ProduceText(Player player){
+
+    }
+}
