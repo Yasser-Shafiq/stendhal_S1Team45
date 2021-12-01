@@ -201,6 +201,7 @@ public final class Actions {
 
 	public final static String BESTIARY = "bestiary";
 
+
 	private Actions() {
 		// hide constructor
 	}
