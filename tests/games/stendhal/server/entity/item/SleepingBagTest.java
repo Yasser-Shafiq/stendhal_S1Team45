@@ -2,6 +2,7 @@ package games.stendhal.server.entity.item;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -34,5 +35,17 @@ public class SleepingBagTest {
 
 		assertNotNull(bill.getAllEquipped("sleeping bag"));
 		assertEquals(bill.getAllEquipped("sleeping bag").size(), 1);
+	}
+	
+	/**
+	 * Test for onUsed 
+	 */
+	@Test
+	public void testOnUsed() {
+		final Player testPlayer = PlayerTestHelper.createPlayer("bob");
+		final SleepingBag testSBag = (SleepingBag) SingletonRepository.getEntityManager().getItem("sleeping bag");
+		testPlayer.equip("bag", testSBag);
+		
+		assertTrue(testSBag.onUsed(testPlayer));
 	}
 }
