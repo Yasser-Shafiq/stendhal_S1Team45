@@ -4,6 +4,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -37,13 +40,20 @@ public class SleepingBagTest {
 		assertEquals(bill.getAllEquipped("sleeping bag").size(), 1);
 	}
 	
+	/**
+	 * Test for onUsed 
+	 */
 	@Test
 	public void testOnUsed() {
-		final Player testPlayer = PlayerTestHelper.createPlayer("bob");
-		final SleepingBag testSBag = (SleepingBag) SingletonRepository.getEntityManager().getItem("sleeping bag");
-		testPlayer.equip("bag", testSBag);
+		String name = "sleeping bag";
+		String clazz = "";
+		String subclass = "";
+		Map<String, String> attributes = new HashMap<String, String>();
+		Player testPlayer = PlayerTestHelper.createPlayer("bob");
+		final SleepingBag bag = new SleepingBag(name, clazz, subclass, attributes);
+		testPlayer.equip("bag", bag);
 
-		assertTrue(testSBag.onUsed(testPlayer));
+		assertTrue(bag.onUsed(testPlayer));
 
 	}
 		
