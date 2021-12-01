@@ -22,7 +22,9 @@ public class SleepStatusTest {
 	@Test
 	public void testSleeping() {
 		final Player testPlayer = PlayerTestHelper.createPlayer("bob");
-		testPlayer.getStatusList().inflictStatus(new SleepStatus(), null);
+		SleepStatus status = new SleepStatus();
+		SleepStatusHandler statusHandler = new SleepStatusHandler();
+		statusHandler.inflict(status, testPlayer.getStatusList(), null);
 		assertTrue(testPlayer.hasStatus(StatusType.SLEEPING));
 	}
 
