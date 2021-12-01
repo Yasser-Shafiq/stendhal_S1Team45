@@ -29,7 +29,7 @@ public class SleepingBagTest {
 	@Test
 	public void testAddToSlotUnmarked() {
 		final Player bill = PlayerTestHelper.createPlayer("bill");
-		final WeddingRing sleepingBag = (WeddingRing) SingletonRepository.getEntityManager().getItem("sleeping bag");
+		final SleepingBag sleepingBag = (SleepingBag) SingletonRepository.getEntityManager().getItem("sleeping bag");
 
 		bill.equip("bag", sleepingBag);
 
@@ -37,15 +37,14 @@ public class SleepingBagTest {
 		assertEquals(bill.getAllEquipped("sleeping bag").size(), 1);
 	}
 	
-	/**
-	 * Test for onUsed 
-	 */
 	@Test
 	public void testOnUsed() {
 		final Player testPlayer = PlayerTestHelper.createPlayer("bob");
 		final SleepingBag testSBag = (SleepingBag) SingletonRepository.getEntityManager().getItem("sleeping bag");
 		testPlayer.equip("bag", testSBag);
-		
+
 		assertTrue(testSBag.onUsed(testPlayer));
+
 	}
+		
 }
