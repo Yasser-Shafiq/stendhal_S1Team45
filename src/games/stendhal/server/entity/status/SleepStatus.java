@@ -6,12 +6,21 @@ package games.stendhal.server.entity.status;
 
 public class SleepStatus extends Status{
 	
+	
+	/** 
+	 * Creates sleep status
+	 */
 	public SleepStatus() {
 		super("sleep");
 	}
 	
+	/**
+	 * Returns status type (SLEEPING)
+	 * 
+	 * @return StatusType
+	 */
 	@Override
 	public StatusType getStatusType() {
-		return null;
+		return StatusType.SLEEPING;
 	}
 }

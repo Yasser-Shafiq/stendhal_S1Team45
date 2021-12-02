@@ -122,6 +122,10 @@ public abstract class RPEntity extends AudibleEntity {
      * Heavy property
      */
     public static final Property PROP_HEAVY = new Property();
+    /** 
+     * Sleep property
+     */
+    public static final Property PROP_SLEEP = new Property();
 
     private static final Map<StatusID, Property> statusProp;
     static {
@@ -131,6 +135,7 @@ public abstract class RPEntity extends AudibleEntity {
         statusProp.put(StatusID.SHOCK, PROP_SHOCK);
         statusProp.put(StatusID.ZOMBIE, PROP_ZOMBIE);
         statusProp.put(StatusID.HEAVY, PROP_HEAVY);
+        statusProp.put(StatusID.SLEEP, PROP_SLEEP);
     }
 
 	/**

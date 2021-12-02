@@ -240,7 +240,8 @@ public class StatusList {
 		final StatusType stype = status.getStatusType();
 		if ((stype == StatusType.POISONED)
 				|| (stype == StatusType.CONFUSED)
-				|| (stype == StatusType.SHOCKED)) {
+				|| (stype == StatusType.SHOCKED)
+				|| (stype == StatusType.SLEEPING)) {
 			final RPEntity entity = this.getEntity();
 			if (entity.has(AUTOWALK)) {
 				entity.remove(AUTOWALK);
