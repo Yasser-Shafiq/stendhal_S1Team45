@@ -29,9 +29,8 @@ public class ChairTest {
 		final Item chair = SingletonRepository.getEntityManager().getItem("chair");
 
 		bill.equip("bag", chair);
-
-		assertNotNull(bill.getAllEquipped("chair"));
-		assertEquals(bill.getAllEquipped("chair").size(), 1);
+		
+		assertNotNull(bill.getTotalNumberOf("chair"));
 	}
 	
 }
