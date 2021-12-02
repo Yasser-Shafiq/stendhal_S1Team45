@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static utilities.SpeakerNPCTestHelper.getReply;
 
-
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -28,8 +28,11 @@ import games.stendhal.server.entity.npc.SpeakerNPC;
 import games.stendhal.server.entity.npc.fsm.Engine;
 import games.stendhal.server.entity.player.Player;
 import games.stendhal.server.maps.MockStendlRPWorld;
+import games.stendhal.server.maps.quests.AbstractQuest;
+import games.stendhal.server.maps.quests.Tour;
 import marauroa.server.game.db.DatabaseFactory;
 import utilities.PlayerTestHelper;
+import utilities.QuestHelper;
 
 
 public class TourGuideNPCTest {
@@ -43,6 +46,7 @@ public class TourGuideNPCTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		MockStendlRPWorld.get();
+		QuestHelper.setUpBeforeClass();
 		StendhalRPZone zone = new StendhalRPZone("admin_test");
 		new TourGuideNPC().configureZone(zone, null);
 		new DatabaseFactory().initializeDatabase();
@@ -51,6 +55,8 @@ public class TourGuideNPCTest {
 	@Before
 	public void setUp() {
 		final StendhalRPWorld world = SingletonRepository.getRPWorld();
+		final AbstractQuest quest = new Tour();
+		quest.addToWorld();
 		srpz = new StendhalRPZone("0_semos_city", 100, 100);
 		destination = new StendhalRPZone("0_amazon_island_nw", 100, 100);
 		world.addRPZone(srpz);
@@ -62,19 +68,24 @@ public class TourGuideNPCTest {
 		player = PlayerTestHelper.createPlayer("bob");
 		player.teleport(srpz, 10, 10, null, null);
 	}
+	
+	@After
+	public void tearDown() {
+		SingletonRepository.getNPCList().clear();
+	}
 
 	@Test
 	public void createDialogTest() {
 		assertEquals(player.getZone().getName(), srpz.getName());
 		assertEquals(npc.getZone().getName(), srpz.getName());
 		assertTrue(en.step(player, "hi"));
+		assertEquals("Hello, say #quest if you would like to embark on a tour", getReply(npc));
+		assertTrue(en.step(player, "quest"));
 		assertEquals("Tour?", getReply(npc));
 		assertTrue(en.step(player, "yes"));
 		assertEquals(player.getZone().getName(), destination.getName());
 		assertEquals(npc.getZone().getName(), destination.getName());
 		assertTrue(player.isInvisibleToCreatures());
-		assertTrue(npc.isInvisibleToCreatures());
-		assertEquals("This is the Amazon Islands! Enter #end when you would like to end the tour", getReply(npc));
 		assertTrue(en.step(player, "end"));
 		assertEquals(player.getZone().getName(), srpz.getName());
 		assertEquals(npc.getZone().getName(), srpz.getName());

@@ -38,19 +38,19 @@ public class TourGuideNPC implements ZoneConfigurator {
 		final SpeakerNPC npc = new SpeakerNPC("Truman") {
 			@Override
 			public void createDialog() {
-				addJob("I provide can give you a #tour");
-				addOffer("Would you like a tour?");
+				addGoodbye();
+				addJob("I can give you a #tour");
 			}
 
 			@Override
 			protected void onGoodbye(RPEntity player) {
 				setDirection(Direction.DOWN);
 			}
-
+			
 
 
 		};
-		npc.setPosition(33, 43);
+		npc.setPosition(33, 44);
 		npc.setEntityClass("youngsoldiernpc");
 		npc.setDescription("You see Truman");
 		npc.setDirection(Direction.DOWN);
