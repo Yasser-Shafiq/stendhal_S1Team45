@@ -24,8 +24,26 @@ public class SleepStatusTest {
 		final Player testPlayer = PlayerTestHelper.createPlayer("bob");
 		SleepStatus status = new SleepStatus();
 		SleepStatusHandler statusHandler = new SleepStatusHandler();
+		
 		statusHandler.inflict(status, testPlayer.getStatusList(), null);
+		
 		assertTrue(testPlayer.hasStatus(StatusType.SLEEPING));
 	}
 
+	/**
+	 * Test for removing sleep status
+	 */
+	@Test
+	public void testRemove() {
+		
+		final Player testPlayer = PlayerTestHelper.createPlayer("bob");
+		SleepStatus status = new SleepStatus();
+		SleepStatusHandler statusHandler = new SleepStatusHandler();
+		statusHandler.inflict(status, testPlayer.getStatusList(), null);
+		
+		statusHandler.remove(status, testPlayer.getStatusList());
+		
+		assertFalse(testPlayer.hasStatus(StatusType.SLEEPING));
+		
+	}
 }
