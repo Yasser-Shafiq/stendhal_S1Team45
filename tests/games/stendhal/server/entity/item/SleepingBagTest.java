@@ -1,6 +1,6 @@
 package games.stendhal.server.entity.item;
 
-import static org.junit.Assert.assertEquals;
+//import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -36,8 +36,7 @@ public class SleepingBagTest {
 
 		bill.equip("bag", sleepingBag);
 
-		assertNotNull(bill.getAllEquipped("sleeping bag"));
-		assertEquals(bill.getAllEquipped("sleeping bag").size(), 1);
+		assertNotNull(bill.getTotalNumberOf("sleeping bag"));
 	}
 	
 	/**
