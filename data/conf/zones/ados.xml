@@ -1857,6 +1857,7 @@ You should never dive with a cold or severe allergy because, you may not be able
 
   <zone name="int_ados_felinas_house" file="interiors/ados/felinas_house.tmx">
     <!-- NPCs -->
+    <configurator class-name="games.stendhal.server.maps.ados.felinashouse.FurnitureSellerNPC" />
     <configurator class-name="games.stendhal.server.maps.ados.felinashouse.CatSellerNPC" />
     <configurator class-name="games.stendhal.server.maps.ados.felinashouse.KittensNPC" />
 
