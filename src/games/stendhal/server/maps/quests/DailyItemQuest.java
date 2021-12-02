@@ -257,6 +257,8 @@ public class DailyItemQuest extends AbstractQuest {
 		items.put("pelt",5);
 		items.put("rodent trap",5);
 		items.put("teddy",1);
+		items.put("chair",1);
+
 
 		// money
 		items.put("money",100);
