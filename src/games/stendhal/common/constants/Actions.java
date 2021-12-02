@@ -200,6 +200,7 @@ public final class Actions {
 	public final static String COND_STOP = "conditional_stop";
 
 	public final static String BESTIARY = "bestiary";
+	public final static String NEWSPAPER = "newspaper";
 
 
 	private Actions() {

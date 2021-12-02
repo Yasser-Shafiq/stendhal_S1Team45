@@ -54,7 +54,7 @@
 
 
   <item name="newspaper">
-    <type class="book" subclass="book_red" tileid="-1"/>
+    <type class="book" subclass="book_newspaper" tileid="-1"/>
     <description>You see a newspaper, it contains several interesting daily news.</description>
     <implementation class-name="games.stendhal.server.entity.item.Newspaper"/>
     <attributes>

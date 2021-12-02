@@ -495,6 +495,7 @@ public class ItemTest {
 					try {
 						Class<?> clazz = item.getClass();
 						Constructor<?> ctor = clazz.getConstructor(clazz);
+
 						clone = ctor.newInstance(item);
 					} catch (Exception e) {
 						fail("copying " + item.getName() + " failed: " + e.toString());
