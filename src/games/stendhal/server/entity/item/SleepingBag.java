@@ -1,6 +1,7 @@
 package games.stendhal.server.entity.item;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import games.stendhal.server.entity.RPEntity;
 
@@ -15,11 +16,29 @@ public class SleepingBag extends Item {
 	
 	public SleepingBag(final String name, final String clazz, final String subclass, final Map<String, String> attributes) {
 		super(name, clazz, subclass, attributes);
-		setMenu("Sleep");
+		setMenu("Use");
+	}
+	
+	public SleepingBag(final SleepingBag item) {
+		super(item);
 	}
 	
 	@Override
 	public boolean onUsed(final RPEntity user) {
-		return false;
+		
+		int maxHp = user.getBaseHP();
+		int currentHp  = user.getHP();
+		int healAmount = 1/100 * maxHp;
+		
+		while(currentHp < maxHp) {
+			user.heal(healAmount);
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return true;
 	}
 }
