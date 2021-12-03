@@ -202,16 +202,16 @@ Notable contributors:
   · Maps maker
   · NPCs
 - Mihnea Dumitru
-  · Coder (fixed Solar and glacier centaur have the wrong elemental susceptibility)
+  · Coder (fixed Solar and glacier centaur have the wrong elemental susceptibility, worked on house furniture first release)
 - Yasser Shafiq
-  · Coder (fixed NPC Lupos doesn't want an elvish hat for quest)
+  · Coder (fixed NPC Lupos doesn't want an elvish hat for quest, worked on house furniture first release)
 - Scott Caulfield
-  · Coder (fixed Omura Sumitada's dialogue is confusing)
+  · Coder (fixed Omura Sumitada's dialogue is confusing, worked on sleeping bag first release)
 - Chenxi Qu
-  · Coder (fixed Zynn Iwuhos dialogue does not grant XP)
+  · Coder (fixed Zynn Iwuhos dialogue does not grant XP, worked on daily post first release)
 - Daniel Oxley
-  · Coder (fixed Teleport scrolls work when poisoned)
+  · Coder (fixed Teleport scrolls work when poisoned, worked on tour guide first release)
 - Toe Naing Lin
-  · Coder (fixed The bestiary item is just full of fluff...)
+  · Coder (fixed The bestiary item is just full of fluff..., worked on sleeping bag first release)
 - Hongding Xu
-  · Coder (fixed Gamblos does not like my arrow)
+  · Coder (fixed Gamblos does not like my arrow, worked on daily post first release)

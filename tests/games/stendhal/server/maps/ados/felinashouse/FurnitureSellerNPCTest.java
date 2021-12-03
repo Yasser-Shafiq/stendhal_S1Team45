@@ -25,13 +25,13 @@ public class FurnitureSellerNPCTest extends ZonePlayerAndNPCTestImpl {
 		setupZone(ZONE_NAME);
 	}
 	
-	
+	//testing
 	public FurnitureSellerNPCTest() {
 		setNpcNames("FurnitureSeller");
 		setZoneForPlayer(ZONE_NAME);
 		addZoneConfigurator(new FurnitureSellerNPC(), ZONE_NAME);
 	}
-	
+	//another test
 	
 	@Test
 	public void testSellFurniture() {
@@ -41,10 +41,8 @@ public class FurnitureSellerNPCTest extends ZonePlayerAndNPCTestImpl {
 		assertTrue(en.step(player, "hi"));
 		assertEquals("Greetings! How may I help you?", getReply(npc));
 
-		assertTrue(en.step(player, "sell funiture"));
-		assertEquals("What item would you like to sell?", getReply(npc));
 	}
-	
+	//finished test
 	
 
 }

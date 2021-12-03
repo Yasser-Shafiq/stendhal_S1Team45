@@ -2,6 +2,19 @@ Changelog
 ---------
 ---------
 
+1.37uom
+*world*
+- new items:
+  - newspaper
+  - chair
+  - sleeping bag
+- new NPCs:
+  - Furniture Shop NPC
+  - Newspaper NPCs
+  - Tour Guide NPC
+- new shop:
+  - furniture shop
+
 1.36uom
 *fixes*
 - fixed Solar and glacier centaur have the wrong elemental susceptibility
