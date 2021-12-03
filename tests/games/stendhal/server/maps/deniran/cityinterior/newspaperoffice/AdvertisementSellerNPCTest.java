@@ -12,7 +12,7 @@ import games.stendhal.server.core.engine.StendhalRPZone;
 import games.stendhal.server.entity.npc.SpeakerNPC;
 import games.stendhal.server.entity.npc.fsm.Engine;
 import games.stendhal.server.entity.player.Player;
-import games.stendhal.server.maps.deniran.cityoutside.NewspaperNPC;
+import games.stendhal.server.maps.deniran.cityinterior.newspaperoffice.AdvertisementSellerNPC;
 import utilities.PlayerTestHelper;
 import utilities.QuestHelper;
 import utilities.RPClass.ItemTestHelper;
@@ -32,7 +32,7 @@ public class AdvertisementSellerNPCTest {
     @Before
     public void setUp() {
         StendhalRPZone zone = new StendhalRPZone("admin_test");
-        new NewspaperNPC().configureZone(zone, null);
+        new AdvertisementSellerNPC().configureZone(zone, null);
 
     }    
 	@Test
@@ -45,7 +45,7 @@ public class AdvertisementSellerNPCTest {
         assertEquals("Greetings! How may I help you?", getReply(npc));
 
         en.step(player, "buy advertisement");
-        assertEquals(" Sorry, I don't sell advertisements."  , getReply(npc));
+        assertEquals("Sorry, I don't sell advertisements."  , getReply(npc));
 	}
 
 }

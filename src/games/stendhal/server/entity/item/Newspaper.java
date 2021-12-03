@@ -105,7 +105,6 @@ public class Newspaper extends OwnedItem {
 			}
 		}
 
-
 		player.addEvent(new PrivateTextEvent(NotificationType.WARNING, "Daily News"+ "\n"));
 		player.addEvent(new PrivateTextEvent(NotificationType.SUPPORT, "the highest level of player in the world is "+
 				HighestLevelPlayer +"! his level is " +  HighestLevel +  "！\n"));
