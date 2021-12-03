@@ -23,8 +23,7 @@ import games.stendhal.server.entity.npc.SpeakerNPC;
 /**
  * Tour Guide NPC
  *
- * @see games.stendhal.server.maps.quests.MeetMonogenes
- * @see games.stendhal.server.maps.quests.HatForMonogenes
+ * @see games.stendhal.server.maps.quests.Tour
  */
 public class TourGuideNPC implements ZoneConfigurator {
 

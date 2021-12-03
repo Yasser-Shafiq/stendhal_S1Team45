@@ -25,17 +25,7 @@ import games.stendhal.server.entity.npc.EventRaiser;
 import games.stendhal.server.entity.npc.SpeakerNPC;
 import games.stendhal.server.entity.npc.action.MultipleActions;
 import games.stendhal.server.entity.npc.action.SetQuestAndModifyKarmaAction;
-//import games.stendhal.server.entity.npc.condition.AndCondition;
 import games.stendhal.server.entity.npc.condition.GreetingMatchesNameCondition;
-//import games.stendhal.server.entity.npc.condition.AndCondition;
-//import games.stendhal.server.entity.npc.condition.GreetingMatchesNameCondition;
-//import games.stendhal.server.entity.npc.condition.NotCondition;
-//import games.stendhal.server.entity.npc.condition.OrCondition;
-//import games.stendhal.server.entity.npc.condition.PlayerHasItemWithHimCondition;
-//import games.stendhal.server.entity.npc.condition.QuestCompletedCondition;
-//import games.stendhal.server.entity.npc.condition.QuestNotCompletedCondition;
-//import games.stendhal.server.entity.npc.condition.QuestInStateCondition;
-//import games.stendhal.server.entity.npc.condition.QuestNotStartedCondition;
 import games.stendhal.server.entity.npc.condition.QuestStateStartsWithCondition;
 import games.stendhal.server.entity.player.Player;
 import games.stendhal.server.maps.Region;
@@ -43,10 +33,9 @@ import games.stendhal.server.core.engine.SingletonRepository;
 import games.stendhal.server.core.engine.StendhalRPZone;
 import games.stendhal.server.core.rp.StendhalRPAction;
 
-
+//quest is repeatable and offers no reward. more of a wrapper for the tour system
 public class Tour extends AbstractQuest {
 	private static final String QUEST_SLOT = "tour";
-
 
 	private void offerQuestStep() {
 		final SpeakerNPC npc = npcs.get("Truman");
@@ -65,7 +54,6 @@ public class Tour extends AbstractQuest {
 				ConversationStates.QUEST_OFFERED,
 				"Tour?",
 				null);
-
 
 		npc.add(ConversationStates.QUEST_OFFERED,
 				ConversationPhrases.YES_MESSAGES,
@@ -93,7 +81,6 @@ public class Tour extends AbstractQuest {
 				"Bye",
 				new SetQuestAndModifyKarmaAction(QUEST_SLOT, "rejected", 0));
 		
-		
 		npc.add(ConversationStates.QUEST_STARTED,
 				Arrays.asList("end"),
 				null,
@@ -116,8 +103,6 @@ public class Tour extends AbstractQuest {
 						));
 	}
 
-
-
 	@Override
 	public void addToWorld() {
 		fillQuestInfo(
@@ -126,7 +111,6 @@ public class Tour extends AbstractQuest {
 				true);
 		offerQuestStep();
 	}
-
 
 	@Override
 	public List<String> getHistory(final Player player) {

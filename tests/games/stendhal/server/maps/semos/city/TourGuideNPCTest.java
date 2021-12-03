@@ -76,6 +76,7 @@ public class TourGuideNPCTest {
 
 	@Test
 	public void createDialogTest() {
+		//check in same zone
 		assertEquals(player.getZone().getName(), srpz.getName());
 		assertEquals(npc.getZone().getName(), srpz.getName());
 		assertTrue(en.step(player, "hi"));
@@ -83,10 +84,12 @@ public class TourGuideNPCTest {
 		assertTrue(en.step(player, "quest"));
 		assertEquals("Tour?", getReply(npc));
 		assertTrue(en.step(player, "yes"));
+		//check player and npc are teleported to amazon island
 		assertEquals(player.getZone().getName(), destination.getName());
 		assertEquals(npc.getZone().getName(), destination.getName());
 		assertTrue(player.isInvisibleToCreatures());
 		assertTrue(en.step(player, "end"));
+		//check teleported back
 		assertEquals(player.getZone().getName(), srpz.getName());
 		assertEquals(npc.getZone().getName(), srpz.getName());
 	}
