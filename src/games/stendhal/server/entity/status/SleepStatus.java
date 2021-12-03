@@ -4,14 +4,14 @@ package games.stendhal.server.entity.status;
  * A status effect that causes entity to sleep
  */
 
-public class SleepStatus extends Status{
+public class SleepStatus extends ConsumableStatus{
 	
 	
 	/** 
 	 * Creates sleep status
 	 */
-	public SleepStatus() {
-		super("sleep");
+	public SleepStatus(int amount, int frequency, int regen) {
+		super("sleep", amount, frequency, regen);
 	}
 	
 	/**

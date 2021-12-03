@@ -1,6 +1,7 @@
 package games.stendhal.server.entity.status;
 
 import games.stendhal.common.NotificationType;
+import games.stendhal.server.core.events.TurnListener;
 import games.stendhal.server.core.events.TurnNotifier;
 import games.stendhal.server.entity.Entity;
 import games.stendhal.server.entity.RPEntity;
@@ -30,6 +31,10 @@ public class SleepStatusHandler implements StatusHandler<SleepStatus> {
 				statusList.activateStatusAttribute("status_" + status.getName());
 			}
 		}
+		
+		TurnListener turnListener = new SleepStatusTurnListener(statusList);
+		TurnNotifier.get().dontNotify(turnListener);
+		TurnNotifier.get().notifyInTurns(0, turnListener);
 		
 	}
 	

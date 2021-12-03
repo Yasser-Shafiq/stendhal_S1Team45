@@ -22,7 +22,7 @@ public class SleepStatusTest {
 	@Test
 	public void testSleeping() {
 		final Player testPlayer = PlayerTestHelper.createPlayer("bob");
-		SleepStatus status = new SleepStatus();
+		SleepStatus status = new SleepStatus(1000, 10, 3);
 		SleepStatusHandler statusHandler = new SleepStatusHandler();
 		
 		statusHandler.inflict(status, testPlayer.getStatusList(), null);
@@ -37,7 +37,7 @@ public class SleepStatusTest {
 	public void testRemove() {
 		
 		final Player testPlayer = PlayerTestHelper.createPlayer("bob");
-		SleepStatus status = new SleepStatus();
+		SleepStatus status = new SleepStatus(1000, 10, 3);
 		SleepStatusHandler statusHandler = new SleepStatusHandler();
 		statusHandler.inflict(status, testPlayer.getStatusList(), null);
 		

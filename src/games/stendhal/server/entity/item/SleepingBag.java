@@ -6,7 +6,8 @@ import java.util.Map;
 //import games.stendhal.server.core.events.TurnNotifier;
 import games.stendhal.server.entity.RPEntity;
 //import games.stendhal.server.entity.player.Player;
-import games.stendhal.server.entity.status.EatStatus;
+import games.stendhal.server.entity.status.SleepStatus;
+import games.stendhal.server.entity.status.StatusType;
 
 /**
  * A sleeping bag that allows players to sleep, making them unable to move.
@@ -44,8 +45,12 @@ public class SleepingBag extends Item {
 	@Override
 	public boolean onUsed(final RPEntity user) {
 		
-		EatStatus eat = new EatStatus(1000, 10, 3);
-		user.getStatusList().inflictStatus(eat, user);
+		if (user.getStatusList().hasStatus(StatusType.SLEEPING)) {
+			user.getStatusList().removeAll(SleepStatus.class);
+		} else {
+			SleepStatus sleep = new SleepStatus(1000, 10, 3);
+			user.getStatusList().inflictStatus(sleep, null);
+		}
 		
 		return true;
 	}
