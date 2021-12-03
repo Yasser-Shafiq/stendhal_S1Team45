@@ -171,6 +171,7 @@ public class StendhalQuestSystem {
 		loadQuest(new SuppliesForPhalk());
 		loadQuest(new TakeGoldforGrafindle());
 		loadQuest(new ThePiedPiper());
+		loadQuest(new Tour());
 		loadQuest(new ToysCollector());
 		loadQuest(new TrapsForKlaas());
 		loadQuest(new UltimateCollector());
