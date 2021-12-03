@@ -61,28 +61,7 @@ import games.stendhal.server.entity.spell.Spell;
 import games.stendhal.server.entity.trade.Earning;
 import games.stendhal.server.entity.trade.Market;
 import games.stendhal.server.entity.trade.Offer;
-import games.stendhal.server.events.AttackEvent;
-import games.stendhal.server.events.BestiaryEvent;
-import games.stendhal.server.events.BuddyLoginEvent;
-import games.stendhal.server.events.BuddyLogoutEvent;
-import games.stendhal.server.events.ExamineEvent;
-import games.stendhal.server.events.GlobalVisualEffectEvent;
-import games.stendhal.server.events.GroupChangeEvent;
-import games.stendhal.server.events.GroupInviteEvent;
-import games.stendhal.server.events.HealedEvent;
-import games.stendhal.server.events.ImageEffectEvent;
-import games.stendhal.server.events.PlayerLoggedOnEvent;
-import games.stendhal.server.events.PlayerLoggedOutEvent;
-import games.stendhal.server.events.PrivateTextEvent;
-import games.stendhal.server.events.ProgressStatusEvent;
-import games.stendhal.server.events.ReachedAchievementEvent;
-import games.stendhal.server.events.ShowItemListEvent;
-import games.stendhal.server.events.ShowOutfitListEvent;
-import games.stendhal.server.events.SoundEvent;
-import games.stendhal.server.events.TextEvent;
-import games.stendhal.server.events.TradeStateChangeEvent;
-import games.stendhal.server.events.TransitionGraphEvent;
-import games.stendhal.server.events.ViewChangeEvent;
+import games.stendhal.server.events.*;
 import marauroa.common.game.Definition.DefinitionClass;
 import marauroa.common.game.Definition.Type;
 import marauroa.common.game.RPClass;
@@ -333,7 +312,6 @@ public class RPClassGenerator {
 		if (!RPClass.hasRPClass(Events.BESTIARY)) {
 			BestiaryEvent.generateRPClass();
 		}
-
 		if (!RPClass.hasRPClass(Events.OUTFIT_LIST)) {
 			ShowOutfitListEvent.generateRPClass();
 		}
