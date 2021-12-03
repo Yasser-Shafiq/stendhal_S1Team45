@@ -25,10 +25,10 @@ public class FurnitureSellerNPCdialogTest extends ZonePlayerAndNPCTestImpl {
 	
 	@Test
 	public void testHiAndBye() {
-		final SpeakerNPC npc = getNPC("FurnitureMan");
+		final SpeakerNPC npc = getNPC("FurnitureSeller");
 		final Engine en = npc.getEngine();
 
-		assertTrue(en.step(player, "hi FurnitureMan"));
+		assertTrue(en.step(player, "hi FurnitureSeller"));
 		assertEquals("Greetings! How may I help you?", getReply(npc));
 
 		assertTrue(en.step(player, "bye"));

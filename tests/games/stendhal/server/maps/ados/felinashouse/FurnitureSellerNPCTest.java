@@ -27,15 +27,15 @@ public class FurnitureSellerNPCTest extends ZonePlayerAndNPCTestImpl {
 	
 	
 	public FurnitureSellerNPCTest() {
-		setNpcNames("FurnitureMan");
+		setNpcNames("FurnitureSeller");
 		setZoneForPlayer(ZONE_NAME);
-		addZoneConfigurator(new CatSellerNPC(), ZONE_NAME);
+		addZoneConfigurator(new FurnitureSellerNPC(), ZONE_NAME);
 	}
 	
 	
 	@Test
 	public void testSellFurniture() {
-		final SpeakerNPC npc = getNPC("FurnitureMan");
+		final SpeakerNPC npc = getNPC("FurnitureSeller");
 		final Engine en = npc.getEngine();
 
 		assertTrue(en.step(player, "hi"));
